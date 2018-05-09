@@ -1,0 +1,17 @@
+type Account {
+  id: ID!
+  username: String!
+  password: String!
+  fullname: String!
+  notes: [Note]
+}
+
+type Query {
+  findOneAccount(accountid: Long!): Account!
+  findAllAccounts: [Account]!
+  countAccounts: Long!
+}
+
+type Mutation {
+  newAccount(username: String!, password: String!, fullname: String!) : Account!
+}

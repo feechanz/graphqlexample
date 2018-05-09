@@ -1,0 +1,19 @@
+type Note {
+    id: ID!
+    title: String!
+    note: String!
+    accountid : Int
+    account: Account
+}
+
+extend type Query {
+    findOneNote(noteid: Long!): Note
+    findAllNotes: [Note]!
+    countNotes: Long!
+}
+
+extend type Mutation {
+    newNote(title: String!, note: String!, account: ID!) : Note!
+    deleteNote(id: ID!) : Boolean
+    updateNoteNote(note: String!, id: ID!) : Note!
+}
